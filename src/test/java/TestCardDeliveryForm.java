@@ -34,7 +34,7 @@ public class TestCardDeliveryForm {
     $("[data-test-id='agreement']").click();
     $$("button").find(exactText("Забронировать")).click();
     $("[data-test-id='notification']  .notification__title").shouldBe(visible, Duration.ofSeconds(15)).shouldBe(exactText("Успешно!"));
-    $("[data-test-id='notification']  .notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldBe(text(date));
+    $("[data-test-id='notification']  .notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(text("Встреча успешно забронирована на " + date));
   }
 
   @Test
@@ -58,6 +58,6 @@ public class TestCardDeliveryForm {
     $("[data-test-id='agreement']").click();
     $$("button").find(exactText("Забронировать")).click();
     $("[data-test-id='notification']  .notification__title").shouldBe(visible, Duration.ofSeconds(15)).shouldBe(exactText("Успешно!"));
-    $("[data-test-id='notification']  .notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldBe(text(date));
+    $("[data-test-id='notification']  .notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(text("Встреча успешно забронирована на " + date));
   }
 }
